@@ -11,7 +11,7 @@ export const fetchWeatherData = createAsyncThunk(
   async (searchQuery) => {
     try {
       const response = await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=ed3dc109daec45c0a3e50446230707&q=${madurai}&days=3&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=ed3dc109daec45c0a3e50446230707&q=${searchQuery}&days=3&aqi=no&alerts=no`
       );
       const jsonData = await response.json();
       return jsonData.forecast.forecastday;
